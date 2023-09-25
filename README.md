@@ -1,9 +1,13 @@
-## Comparison with Large Language Models - Pilot Study
+# Comparison with Large Language Models - Pilot Study
 
-We conducted a pilot study to compare the information that can be obtained 1) by querying the knowledge extracted through our Knowledge Extraction pipeline ([Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) and [AMR2FRED](https://github.com/polifonia-project/amr2Fred), jointly available through the [Text2AMR2FRED APIs](http://framester.istc.cnr.it/txt-amr-fred/api/docs/) and [Text2AMR2FRED WebApp](https://arco.istc.cnr.it/txt-amr-fred/)); 2) by asking off-the-shelf Large Language Models, like the [free online version of ChatGPT](https://chat.openai.com/). This study was held in August 2023. This repository contains the results of this study, reported in a [spreadsheet](https://github.com/arianna-graciotti/llms-vs-specialised-knowledge/blob/main/data/LLMs_vs_Text2KGs_QuestionAnswering.xlsx).
+We conducted a pilot study to compare:
+- the information that can be obtained by querying the knowledge extracted through our Knowledge Extraction pipeline ([Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) and [AMR2FRED](https://github.com/polifonia-project/amr2Fred), called through the [Text2AMR2FRED APIs](http://framester.istc.cnr.it/txt-amr-fred/api/docs/) and [Text2AMR2FRED WebApp](https://arco.istc.cnr.it/txt-amr-fred/));
+- the information that can be obtained by asking off-the-shelf Large Language Models, like the [free online version of ChatGPT](https://chat.openai.com/). This study was held in August 2023.
+
+This repository contains the results of this study, reported in a [spreadsheet](https://github.com/arianna-graciotti/llms-vs-specialised-knowledge/blob/main/data/LLMs_vs_Text2KGs_QuestionAnswering.xlsx).
 
 
-### Background
+## Background
 
 We expect Large Language Models to be potentially unreliable in
 downstream tasks like Question Answering (QA) due to their sensitivity
@@ -15,7 +19,7 @@ through a neuro-symbolic text-to-KG pipeline can give higher control
 over the knowledge extracted and, consequently, a higher quality of the
 information retrieved by querying.
 
-### Method
+## Method
 
 We framed the comparison experiment as a Question Answering task on named entities of type `person`. We compared GPT3.5's free-text answers to natural language questions, sent as prompts via the [free online version of ChatGPT](https://chat.openai.com/), to AMR graphs produced by [Text2AMR2FRED](https://arco.istc.cnr.it/txt-amr-fred/)). 
 
@@ -23,30 +27,31 @@ The human evaluators that carried out the experiments are University of Bologna'
 
 The experiment breaks down into two macro-steps.
 
-#### Macro-step 1
+### Macro-step 1
 
 1. _Question formulation, ChatGPT prompting, ChatGPT's answer collection and evaluation_
    
---> 1.a. Human evaluators selected a named entity of type `person` occurring in [Musical heritage Historical Named Entities Recognition, Classification and Linking (MHERCL)](tbd), a dataset that comprises music periodicals whose publication dates range from 1823 to 1900. Therefore, the person named entities occurring in it are related to music and known to be active or alive in a period similar to the periodicals' publication dates range;
+--> 1.a. Human evaluators selected a named entity of type `person` occurring in [Musical heritage Historical Named Entities Recognition, Classification and Linking (MHERCL)](tbd), a dataset of sentences extrapolated from the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus) that comprises music periodicals whose publication dates range from 1823 to 1900. Therefore, the `person` named entities occurring in it are related to music and known to be active or alive in a period similar to the periodicals' publication dates range;
    
---> 1.b. Human evaluators were instructed to maintain a 50-50 gender distribution between the selected male and female named entities. Due to the nature of the dataset they were extrapolated from, both female and male named entities could not belong to significantly different periods. As a result, half of the questions focused on male named entities, and the other half on female named entities;
+--> 1.b. Human evaluators were instructed to maintain a 50-50 gender distribution between the selected `person` named entities. As a result, half of the questions focused on men, and the other half on women historical characters. Due to the nature of the dataset they were extrapolated from, all the selected historical characters could not belong to significantly different periods;
+
  
---> 1.c. Human evaluators accessed the selected person named entity's Wikipedia page;
+--> 1.c. Human evaluators accessed the selected `person` named entity's Wikipedia page;
  
---> 1.d. Human evaluators asked a question related to the named entity chosen at step 1.a to GPT3.5 via the free online version of ChatGPT\footnote{\url{https://chat.openai.com/}} via a single prompt containing the question\footnote{The question had to be answerable with information retrievable in the Wikipedia page of reference, visited in step 1.c.\label{foot:1d}};
+--> 1.d. Human evaluators asked a question related to the named entity chosen at step 1.a to GPT3.5 in the free online version of ChatGPT\footnote{\url{https://chat.openai.com/}} via a single prompt containing the question. N.B.: The question had to be answerable with information retrievable in the Wikipedia page of reference, visited in step 1.c.;
  
 --> 1.e. Human evaluators assessed the correctness of the answer given by ChatGPT.
 
-#### Macro-step 2
+### Macro-step 2
 
 2. _Text2AMR semantic parsing evaluation_
 
---> 2.a The human evaluator transforms the sentence(s) from the Wikipedia page that contains the answer to the question formulated at step 1.d into an AMR graph;
+--> 2.a The human evaluator transforms the sentence(s) from the Wikipedia page that contains the answer to the question formulated at step 1.d into an AMR graph via [Text2AMR2FRED WebApp](https://arco.istc.cnr.it/txt-amr-fred/);
 
---> 2.b The human evaluator assesses the semantic correctness of the AMR graph. The assumption is that if the AMR graph is semantically correct (namely, the predicates recognised by the Text2AMR parser and their arguments are correct), it will be translated into an RDF/OWL KG able to provide the correct answer to a question via a SPARQL query.
+--> 2.b The human evaluator assesses the semantic correctness of the AMR graph under the assumption that if the AMR graph is semantically correct (namely, the predicates recognised by the Text2AMR parser and their arguments are correct), [AMR2FRED](https://github.com/polifonia-project/amr2Fred) will translate it into an RDF/OWL KG able to provide the correct answer to a question via a SPARQL query.
 
 
-### Examples
+## Examples
 
 The examples reported in the tables below are intended to illustrate the content of the results [spreadsheet](https://github.com/arianna-graciotti/llms-vs-specialised-knowledge/blob/main/data/LLMs_vs_Text2KGs_QuestionAnswering.xlsx) stored in this repository.
 
@@ -64,11 +69,11 @@ The examples reported in the tables below are intended to illustrate the content
 | Mary_Ann_Paton              | F          | Where did Mary Ann Paton's sister Isabella make her début as a musician? | Covent Garden Theatre        | She and her sisters received a good musical training: they were singers also, Isabella making her début at Mary Ann's benefit at Covent Garden Theatre, 1824, as Letitia Hardy, and Eliza sing at the Haymarket Theatre in 1833.                                                                                                                                                                            | No                                                        | |
 | Teresina_Brambilla             | F          | How long was Teresina Brambilla's career as a musician?                  | 25 years                     | Teresa "Teresina" Brambilla (15 April 1845 – 1 July 1921) was an Italian soprano who sang in the major opera houses of Europe in a career spanning 25 years.                                                                                                                                                                                                                                              | Yes                                                       | |
 
-### Results
+## Results
 
 The tables below report the results of the experiment.
 
-Looking at the results, we can see that ChatGPT tend to return wrong answers more often when prompted with questions about female named entities. This observation might corroborate the hypotheses regarding gender bias in LLMs (as reported in recent studies such as [Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models](https://aclanthology.org/2023.acl-long.84) (Cheng et al., ACL 2023)) and in Knowledge Bases such as Wikipedia (as reported in recent studies such as [WikiBio: a Semantic Resource for the Intersectional Analysis of Biographical Events](https://aclanthology.org/2023.acl-long.691) (Stranisci et al., ACL 2023)).
+Looking at the results, we can see that ChatGPT tend to return wrong answers more often when prompted with questions about women. This observation might corroborate the hypotheses regarding gender bias in LLMs (as reported in recent studies such as [Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models](https://aclanthology.org/2023.acl-long.84) (Cheng et al., ACL 2023)) and in Knowledge Bases such as Wikipedia (as reported in recent studies such as [WikiBio: a Semantic Resource for the Intersectional Analysis of Biographical Events](https://aclanthology.org/2023.acl-long.691) (Stranisci et al., ACL 2023)).
 
 | **Named entity's gender** | **ChatGPT's answer correct? (Yes)** | **ChatGPT's answer correct? (No)** | **Grand Total** |
 |---------------------------|----------------------------------|---------------------------------|-----------------|
@@ -87,9 +92,7 @@ Although the small sample size is a limitation of this pilot study, especially f
 | M                     | 8 (80%) | 2 (20%) | 10 (100%)|
 | Grand Total           | 15 (75%) | 5 (25%) | 20 (100%)|
 
-Although the small sample size is a limitation of this pilot study, especially for the experiment's macro-step 2, it is noteworthy that answers are included in the AMR graphs without apparent major bias toward the gender of the entities involved.
-
-The last table, reported below, shows a comparison between the ChatGPT answers' correctness and the AMR graphs informativeness (namely the presence, in the graph, of the answer to the question or not). The AMR graphs are produced according to experiment's macro-step 2 methodology. The comparison was performed on a random sub-sample of 20 questions asked about 20 person named entities, extrapolated from the sample collected in Experiment's macro-step 1. 
+The last table, reported below, shows a comparison between the ChatGPT answers' correctness and the AMR graphs informativeness (namely, the presence, in the graph, of the answer to the question or not). The AMR graphs are produced according to experiment's macro-step 2 methodology. The comparison was performed on a random sub-sample of 20 questions asked about 20 person named entities, extrapolated from the sample collected in Experiment's macro-step 1. 
 
 | Named entity's gender | Does the AMR graph contain an answer to the question? (Yes)| Does the AMR graph contain an answer to the question? (No) | Is ChatGPT's answer correct? (Yes) | Is ChatGPT's answer correct? (No) | Grand Total |
 |-----------------------|------------------------------------------------------------|------------------------------------------------------------|------------------------------------|-----------------------------------|-------------|
