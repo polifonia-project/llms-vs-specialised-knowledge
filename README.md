@@ -16,9 +16,9 @@ credits:
 ---
 
 
-# Comparison with Large Language Models - Pilot Study
+# Comparison with Large Language Models - Proof-of-Concept Study
 
-We conducted a pilot study to compare:
+We conducted a Proof-of-Concept study to compare:
 - the information that can be obtained by querying the knowledge extracted through our Knowledge Extraction pipeline ([Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) and [AMR2FRED](https://github.com/polifonia-project/amr2Fred), called through the [Text2AMR2FRED APIs](http://framester.istc.cnr.it/txt-amr-fred/api/docs/) and [Text2AMR2FRED WebApp](https://arco.istc.cnr.it/txt-amr-fred/));
 - the information that can be obtained by asking off-the-shelf Large Language Models, like the [free online version of ChatGPT](https://chat.openai.com/). This study was held in August 2023.
 
@@ -99,9 +99,9 @@ Looking at the results, we can see that ChatGPT tend to return wrong answers mor
 | M                         | 24 (48%)                         | 26 (52%)                        | 50 (100%)       |
 | Grand Total               | 35 (35%)                         | 65 (65%)                        | 100 (100%)      |
 
-As this is a pilot study aimed at exploring the feasibility of the research approach of Text2AMR2FRED VS LLMs comparison, we opted for a smaller sample size for the experiment's macro-step 2, as AMR graphs assessment is challenging and time-consuming. Results of the experiment's macro-step 2., are reported in the table below.
+As this is a Proof-of-Concept study aimed at exploring the feasibility of the research approach of Text2AMR2FRED VS LLMs comparison, we opted for a smaller sample size for the experiment's macro-step 2, as AMR graphs assessment is challenging and time-consuming. Results of the experiment's macro-step 2., are reported in the table below.
 
-Although the small sample size is a limitation of this pilot study, especially for the experiment's macro-step 2, it is noteworthy that answers are included in the AMR graphs without apparent major bias toward the gender of the entities involved.
+Although the small sample size is a limitation of this Proof-of-Concept study, especially for the experiment's macro-step 2, it is noteworthy that answers are included in the AMR graphs without apparent major bias toward the gender of the entities involved.
 
 | Named entity's gender | Does the AMR graph contain an answer to the question? (Yes)| Does the AMR graph contain an answer to the question? (No) | Grand Total |
 |-----------------------|------------------------------------------------------------|------------------------------------------------------------|-------------|
@@ -122,4 +122,4 @@ In spite of the constraints imposed by a small sample size, the table shows that
 
 ### Future work
 
-In future work, we plan to quantitatively expand the samples of the experiment whose pilot's methods and results described and stored in this repository. We aim to expand the experiment's methodology more broadly and examine the interplay between gender and popularity bias along the lines of recent investigations (such as the one reported in [Evaluating Entity Disambiguation and the Role of Popularity in Retrieval-Based NLP](https://aclanthology.org/2021.acl-long.345) (Chen et al., ACL-IJCNLP 2021)) and push forward the research regarding LLMs struggle with long-tail knowledge (as reported in [Large Language Models Struggle to Learn Long-Tail Knowledge](https://proceedings.mlr.press/v202/kandpal23a.html) (Kandpal et al., PMLR 2023)). Also, we plan to expand the experiment's macro-step 2 by building SPARQL queries to verify the informativeness of the Text2AMR2FRED OWL-compliant RDF output KGs through structured interrogations.
+In future work, we plan to quantitatively expand the samples of the experiment whose Proof-of-Concept methods and results described and stored in this repository. We aim to expand the experiment's methodology more broadly and examine the interplay between gender and popularity bias along the lines of recent investigations (such as the one reported in [Evaluating Entity Disambiguation and the Role of Popularity in Retrieval-Based NLP](https://aclanthology.org/2021.acl-long.345) (Chen et al., ACL-IJCNLP 2021)) and push forward the research regarding LLMs struggle with long-tail knowledge (as reported in [Large Language Models Struggle to Learn Long-Tail Knowledge](https://proceedings.mlr.press/v202/kandpal23a.html) (Kandpal et al., PMLR 2023)). Also, we plan to expand the experiment's macro-step 2 by building SPARQL queries to verify the informativeness of the Text2AMR2FRED OWL-compliant RDF output KGs through structured interrogations.
