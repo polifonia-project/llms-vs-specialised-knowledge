@@ -1,3 +1,21 @@
+---
+component-id: llms-vs-specialised-knowledge
+name: LLMs VS Specialised Knowledge
+description: Results of the comparative study between knowledge extracted through our Knowledge Extraction pipeline and information that can be obtained by asking off-the-shelf Large Language Models.
+type: Dataset
+release-date: 30/09/2023
+release-number: v0.1
+work-package: 
+- WP4
+licence: CC-BY_v4
+links:
+- https://github.com/polifonia-project/llms-vs-specialised-knowledge
+credits:
+- https://github.com/roccotrip
+- https://github.com/arianna-graciotti
+---
+
+
 # Comparison with Large Language Models - Pilot Study
 
 We conducted a pilot study to compare:
