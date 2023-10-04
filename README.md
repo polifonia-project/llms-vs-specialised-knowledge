@@ -22,7 +22,7 @@ We conducted a Proof-of-Concept study to compare:
 - the information that can be obtained by querying the knowledge extracted through our Knowledge Extraction pipeline ([Polifonia Knowledge Extractor](https://github.com/polifonia-project/Polifonia-Knowledge-Extractor) and [AMR2FRED](https://github.com/polifonia-project/amr2Fred), called through the [Text2AMR2FRED APIs](http://framester.istc.cnr.it/txt-amr-fred/api/docs/) and [Text2AMR2FRED WebApp](https://arco.istc.cnr.it/txt-amr-fred/));
 - the information that can be obtained by asking off-the-shelf Large Language Models, like the [free online version of ChatGPT](https://chat.openai.com/). This study was held in August 2023.
 
-This repository contains the results of this study, reported in a [spreadsheet](https://github.com/arianna-graciotti/llms-vs-specialised-knowledge/blob/main/data/LLMs_vs_Text2KGs_QuestionAnswering.xlsx).
+This repository contains the results of this study, reported in a [spreadsheet](https://github.com/polifonia-project/llms-vs-specialised-knowledge/blob/main/data/LLMs_vs_Text2KGs_QuestionAnswering.xlsx).
 
 
 ## Background
@@ -51,7 +51,7 @@ The experiment breaks down into two macro-steps.
    
 --> 1.a. Human evaluators selected a named entity of type `person` occurring in [Musical heritage Historical Named Entities Recognition, Classification and Linking (MHERCL)](tbd), a dataset of sentences extrapolated from the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus) that comprises music periodicals whose publication dates range from 1823 to 1900. Therefore, the `person` named entities occurring in it are related to music and known to be active or alive in a period similar to the periodicals' publication dates range;
    
---> 1.b. Human evaluators were instructed to maintain a 50-50 gender distribution between the selected `person` named entities. As a result, half of the questions focused on men, and the other half on women historical characters. Due to the nature of the dataset they were extrapolated from, all the selected historical characters could not belong to significantly different periods;
+--> 1.b. Human evaluators were instructed to maintain a 50-50 gender distribution between the selected `person` named entities. As a result, half of the questions focused on men, and the other half on women historical characters. Due to the nature of the dataset, they were extrapolated from, all the selected historical characters could not belong to significantly different periods;
 
  
 --> 1.c. Human evaluators accessed the selected `person` named entity's Wikipedia page;
