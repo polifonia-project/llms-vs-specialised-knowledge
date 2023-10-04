@@ -49,14 +49,14 @@ The experiment breaks down into two macro-steps.
 
 1. _Question formulation, ChatGPT prompting, ChatGPT's answer collection and evaluation_
    
---> 1.a. Human evaluators selected a named entity of type `person` occurring in [Musical heritage Historical Named Entities Recognition, Classification and Linking (MHERCL)](tbd), a dataset of sentences extrapolated from the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus) that comprises music periodicals whose publication dates range from 1823 to 1900. Therefore, the `person` named entities occurring in it are related to music and known to be active or alive in a period similar to the periodicals' publication dates range;
+--> 1.a. Human evaluators selected a named entity of type `person` occurring in [Musical heritage Historical Named Entities Recognition, Classification and Linking (MHERCL)](https://github.com/polifonia-project/historical-entity-linking), a dataset of sentences extrapolated from the [Polifonia Textual Corpus](https://github.com/polifonia-project/Polifonia-Corpus) that comprises music periodicals whose publication dates range from 1823 to 1900. Therefore, the `person` named entities occurring in it are related to music and known to be active or alive in a period similar to the periodicals' publication dates range;
    
 --> 1.b. Human evaluators were instructed to maintain a 50-50 gender distribution between the selected `person` named entities. As a result, half of the questions focused on men, and the other half on women historical characters. Due to the nature of the dataset, they were extrapolated from, all the selected historical characters could not belong to significantly different periods;
 
  
 --> 1.c. Human evaluators accessed the selected `person` named entity's Wikipedia page;
  
---> 1.d. Human evaluators asked a question related to the named entity chosen at step 1.a to GPT3.5 in the free online version of ChatGPT\footnote{\url{https://chat.openai.com/}} via a single prompt containing the question. N.B.: The question had to be answerable with information retrievable in the Wikipedia page of reference, visited in step 1.c.;
+--> 1.d. Human evaluators asked a question related to the named entity chosen at step 1.a to GPT3.5 in the free online version of ChatGPT via a single prompt containing the question. N.B.: The question had to be answerable with information retrievable in the Wikipedia page of reference, visited in step 1.c.;
  
 --> 1.e. Human evaluators assessed the correctness of the answer given by ChatGPT.
 
